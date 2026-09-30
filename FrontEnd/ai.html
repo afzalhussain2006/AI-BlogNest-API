@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Lab | BlogNest</title>
+
+    <meta name="description" content="Create, summarize, and search BlogNest content with AI">
+
+    <link
+        rel="stylesheet"
+        href="css/theme.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cursor.css"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="assets/icon.png"
+    >
+
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+    <div id="cursor-triangle"></div>
+
+    <!-- =========================================================
+         NAVBAR
+         ========================================================= -->
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="brand logo"
+        >
+
+            <span class="brand-symbol">
+                ◇
+            </span>
+
+            <span>
+                BLOG<span>NEST</span>
+            </span>
+
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="blogs.html">
+                Explore
+            </a>
+
+            <a
+                href="ai.html"
+                class="active"
+            >
+                AI Lab
+            </a>
+
+            <a href="create.html">
+                Create
+            </a>
+
+            <a href="ai-chat.html">
+                <span aria-hidden="true">🤖</span> AI Assistant
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                id="themeToggle"
+                class="theme-toggle icon-button"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                ◐
+            </button>
+
+            <a
+                href="profile.html"
+                class="nav-login"
+            >
+                Profile
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================================
+         MAIN
+         ========================================================= -->
+
+    <main class="ai-page">
+
+        <div class="ai-container">
+
+            <header class="ai-header">
+                <h1>AI LAB</h1>
+                <p>Summarize content and search published articles with BlogNest AI.</p>
+            </header>
+
+            <div class="ai-grid">
+
+                <section class="ai-card full">
+                    <div class="ai-panel-header">
+                        <h2>✦ SUMMARIZE CONTENT</h2>
+                        <span class="ai-badge">NLP // CONDENSER</span>
+                    </div>
+                    <p class="ai-card-description">Condense lengthy articles into key takeaways, bullet points, and core summaries.</p>
+                    <label class="ai-label" for="summaryContent">RAW BLOG CONTENT</label>
+                    <textarea id="summaryContent" class="ai-textarea" rows="6" placeholder="Paste long text, documentation, or blog paragraphs here..."></textarea>
+                    <button id="summarizeButton" class="ai-button" type="button">SUMMARIZE →</button>
+                    <p id="summaryMessage" class="ai-message" aria-live="polite"></p>
+                    <div id="summaryResult" class="ai-result"></div>
+                </section>
+
+                <section class="ai-card full">
+                    <div class="ai-panel-header">
+                        <h2>✦ SEMANTIC BLOG SEARCH</h2>
+                        <span class="ai-badge">VECTOR SEARCH</span>
+                    </div>
+                    <p class="ai-card-description">Find published BlogNest articles related to a question or topic.</p>
+                    <label class="ai-label" for="semanticInput">SEARCH TOPIC</label>
+                    <input id="semanticInput" class="ai-input" type="text" placeholder="What would you like to find?">
+                    <button id="semanticButton" class="ai-button" type="button">SEARCH WITH AI</button>
+                    <p id="semanticMessage" class="ai-message" aria-live="polite"></p>
+                    <div id="semanticResults" class="semantic-results"></div>
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <span class="brand-symbol">
+                ◇
+            </span>
+
+            <span>
+                BLOG<span>NEST</span>
+            </span>
+
+        </div>
+
+        <p>
+            Ideas connected. Stories amplified.
+            Next-generation AI blogging.
+        </p>
+
+    </footer>
+
+    <!-- =========================================================
+         SCRIPTS
+         ========================================================= -->
+
+    <script src="js/loader.js"></script>
+
+    <script src="js/theme.js"></script>
+
+    <script src="js/cursor.js"></script>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/ai.js"></script>
+
+</body>
+
+</html>

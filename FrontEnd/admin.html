@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | BlogNest</title>
+
+    <meta
+        name="description"
+        content="Manage published content, moderate comments, and configure taxonomy categories on BlogNest."
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/theme.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cursor.css"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="assets/icon.png"
+    >
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+    <div id="cursor-triangle"></div>
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="brand logo"
+        >
+            <span class="brand-symbol">
+                ◇
+            </span>
+
+            <span>
+                BLOG<span>NEST</span>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="blogs.html">
+                Explore
+            </a>
+
+            <a href="ai.html">
+                AI Lab
+            </a>
+
+            <a href="create.html">
+                Create
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+            
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                id="themeToggle"
+                class="theme-toggle icon-button"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                ◐
+            </button>
+
+            <button
+                id="mobileMenuBtn"
+                class="mobile-menu-btn"
+                aria-label="Toggle navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+    <div
+        id="mobileDrawer"
+        class="mobile-drawer"
+    >
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="blogs.html">
+            Explore
+        </a>
+
+        <a href="ai.html">
+            AI Lab
+        </a>
+
+        <a href="create.html">
+            Create
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+    </div>
+
+    <main class="admin-page">
+
+        <div class="admin-container">
+
+            <section class="admin-header">
+
+                <div class="admin-eyebrow">
+
+                    <span class="status-dot"></span>
+
+                    ROOT CONTROL PANEL //
+                    GOVERNANCE CONSOLE
+
+                </div>
+
+                <h1>
+                    ADMIN DASHBOARD
+                </h1>
+
+                <p>
+                    Manage published articles,
+                    monitor content pipelines,
+                    approve or moderate
+                    community comments,
+                    and maintain the
+                    taxonomy hierarchy.
+                </p>
+
+            </section>
+
+            <div
+                id="adminWarning"
+                class="admin-warning"
+            >
+                ACCESS RESTRICTED —
+                ADMIN OR EDITOR PRIVILEGES
+                REQUIRED
+            </div>
+
+            <section class="admin-grid">
+
+                <div class="admin-stat">
+
+                    <div class="admin-stat-label">
+                        // TOTAL SYSTEM POSTS
+                    </div>
+
+                    <div
+                        id="totalPosts"
+                        class="admin-stat-number"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+                <div class="admin-stat">
+
+                    <div class="admin-stat-label">
+                        // PUBLISHED ON FEED
+                    </div>
+
+                    <div
+                        id="publishedPosts"
+                        class="admin-stat-number"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="admin-section">
+
+                <div class="admin-section-header">
+
+                    <h2>
+                        ◈ CATEGORY MANAGEMENT
+                    </h2>
+
+                    <span>
+                        TAXONOMY CONFIGURATION
+                    </span>
+
+                </div>
+
+                <form
+                    id="categoryForm"
+                    style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 14px; margin-bottom: 25px;"
+                >
+
+                    <input
+                        id="categoryName"
+                        type="text"
+                        maxlength="100"
+                        placeholder="Category Name (e.g. Distributed Systems)"
+                        required
+                    >
+
+                    <input
+                        id="categoryDescription"
+                        type="text"
+                        maxlength="500"
+                        placeholder="Brief description or purpose"
+                    >
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        style="padding: 0 24px;"
+                    >
+                        + CREATE CATEGORY
+                    </button>
+
+                </form>
+
+                <div
+                    id="categoryMessage"
+                    class="admin-message"
+                >
+                    Loading categories...
+                </div>
+
+                <div class="admin-table-wrap">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    CATEGORY NAME
+                                </th>
+
+                                <th>
+                                    SLUG
+                                </th>
+
+                                <th>
+                                    DESCRIPTION
+                                </th>
+
+                                <th>
+                                    ACTIONS
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody
+                            id="adminCategories"
+                        ></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section class="admin-section">
+
+                <div class="admin-section-header">
+
+                    <h2>
+                        ◈ COMMENT MODERATION
+                    </h2>
+
+                    <span>
+                        COMMUNITY OVERSIGHT
+                    </span>
+
+                </div>
+
+                <div
+                    id="commentMessage"
+                    class="admin-message"
+                >
+                    Loading comments...
+                </div>
+
+                <div class="admin-table-wrap">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    AUTHOR
+                                </th>
+
+                                <th>
+                                    TARGET BLOG
+                                </th>
+
+                                <th>
+                                    COMMENT CONTENT
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    ACTIONS
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody
+                            id="adminComments"
+                        ></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section class="admin-section">
+
+                <div class="admin-section-header">
+
+                    <h2>
+                        ◈ ARTICLE MANAGEMENT
+                    </h2>
+
+                    <span>
+                        PUBLISHED CONTENT PIPELINE
+                    </span>
+
+                </div>
+
+                <div
+                    id="postsMessage"
+                    class="admin-message"
+                >
+                    Loading published posts...
+                </div>
+
+                <div class="admin-table-wrap">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    TITLE
+                                </th>
+
+                                <th>
+                                    AUTHOR
+                                </th>
+
+                                <th>
+                                    CATEGORY
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    ACTIONS
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody
+                            id="adminPosts"
+                        ></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <span class="brand-symbol">
+                ◇
+            </span>
+
+            <span>
+                BLOG<span>NEST</span>
+            </span>
+
+        </div>
+
+        <p>
+            Ideas connected. Stories amplified.
+            Next-generation AI blogging.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="blogs.html">
+                Explore
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+            BLOGNEST // ADMIN PRIVILEGED SESSION
+        </div>
+
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | BlogNest — Future of Blogging</title>
+    <meta name="description" content="Access your BlogNest identity and create AI-powered content.">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon.png">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div id="cursor-triangle"></div>
+
+    <a href="index.html" class="back-home">
+        <span>←</span> BACK TO BLOGNEST
+    </a>
+
+    <div style="position: absolute; top: 25px; right: 5vw; z-index: 10;">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+            ◐
+        </button>
+    </div>
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+            <div class="auth-card">
+
+                <div class="auth-logo">
+                    <div class="eyebrow" style="margin-bottom: 12px;">// SECURE ACCESS</div>
+                    <h1>BLOG<span>NEST</span></h1>
+                    <p>Enter the next generation of blogging.</p>
+                </div>
+
+                <form id="loginForm" class="auth-form" novalidate>
+
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="user@blognest.network"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">PASSWORD</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="••••••••••••"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <div id="loginMessage" class="auth-message"></div>
+
+                    <button type="submit" class="auth-button">
+                        AUTHENTICATE →
+                    </button>
+
+                </form>
+
+                <div class="auth-footer">
+                    Don't have an identity yet?
+                    <a href="register.html">Create Account</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="js/loader.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Assistant | BlogNest</title>
+
+    <meta
+        name="description"
+        content="BlogNest AI Assistant"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/theme.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cursor.css"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="assets/icon.png"
+    >
+
+    <style>
+
+        .ai-chat-page {
+            min-height: calc(100vh - 100px);
+            padding: 50px 20px;
+        }
+
+        .ai-chat-container {
+            width: min(100%, 1000px);
+            margin: 0 auto;
+        }
+
+        .ai-chat-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .ai-chat-eyebrow {
+            color: var(--cyan);
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .ai-chat-header h1 {
+            font-size: clamp(32px, 5vw, 58px);
+            margin-bottom: 12px;
+        }
+
+        .ai-chat-header p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .chat-card {
+            border: 1px solid rgba(0, 245, 255, 0.25);
+            background: rgba(5, 10, 15, 0.78);
+            box-shadow:
+                0 0 30px rgba(0, 245, 255, 0.08),
+                inset 0 0 30px rgba(0, 245, 255, 0.025);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .chat-toolbar {
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--cyan);
+            font-size: 13px;
+        }
+
+        .chat-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--cyan);
+            box-shadow: 0 0 12px var(--cyan);
+        }
+
+        /* =========================================================
+           FAQ
+           ========================================================= */
+
+        .faq-section {
+            padding: 20px 25px 5px;
+        }
+
+        .faq-title {
+            color: var(--cyan);
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .faq-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .faq-button {
+            background: rgba(0, 245, 255, 0.04);
+            border: 1px solid rgba(0, 245, 255, 0.18);
+            color: var(--cyan);
+            border-radius: 20px;
+            padding: 9px 13px;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-size: 12px;
+        }
+
+        .faq-button:hover {
+            background: rgba(0, 245, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.12);
+        }
+
+        /* =========================================================
+           CHAT AREA
+           ========================================================= */
+
+        .chat-card .chat-messages {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 18px 25px;
+            box-sizing: border-box;
+        }
+
+        /* =========================================================
+           INDIVIDUAL MESSAGE
+           ========================================================= */
+
+        .chat-card .chat-message {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: none !important;
+            margin: 0 0 18px 0 !important;
+            padding: 0 !important;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .chat-card .chat-message:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .chat-card .chat-message.user {
+            text-align: right;
+        }
+
+        .chat-card .chat-message.ai {
+            text-align: left;
+        }
+
+        /* =========================================================
+           CHAT BUBBLE
+           ========================================================= */
+
+        .chat-card .chat-bubble {
+            display: inline-block !important;
+            position: relative !important;
+            width: auto !important;
+            max-width: 78% !important;
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: none !important;
+            margin: 0 !important;
+            padding: 15px 18px !important;
+            border-radius: 14px;
+            line-height: 1.65;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            text-align: left;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        .chat-card .chat-text {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 0, 255, 0.08);
+            border: 1px solid rgba(255, 0, 255, 0.35);
+            color: #fff;
+        }
+
+        .chat-message.ai .chat-bubble {
+            background: rgba(0, 245, 255, 0.06);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            color: #eaffff;
+        }
+
+        .chat-label {
+            display: block !important;
+
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            margin-bottom: 7px;
+            opacity: 0.65;
+
+            height: auto !important;
+            min-height: 0 !important;
+        }
+
+        /* =========================================================
+           INPUT
+           ========================================================= */
+
+        .chat-input-area {
+            padding: 20px;
+            border-top: 1px solid rgba(0, 245, 255, 0.15);
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            min-width: 0;
+
+            background: rgba(0, 0, 0, 0.4);
+
+            border: 1px solid rgba(0, 245, 255, 0.25);
+
+            border-radius: 12px;
+
+            padding: 14px;
+
+            color: white;
+
+            outline: none;
+
+            font: inherit;
+        }
+
+        .chat-input:focus {
+            border-color: var(--cyan);
+
+            box-shadow:
+                0 0 15px rgba(0, 245, 255, 0.12);
+        }
+
+        .chat-send {
+            border: 1px solid var(--cyan);
+
+            background: rgba(0, 245, 255, 0.08);
+
+            color: var(--cyan);
+
+            border-radius: 12px;
+
+            padding: 0 22px;
+
+            cursor: pointer;
+
+            font-weight: 700;
+        }
+
+        .chat-send:hover {
+            background: rgba(0, 245, 255, 0.16);
+
+            box-shadow:
+                0 0 20px rgba(0, 245, 255, 0.2);
+        }
+
+        .chat-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* =========================================================
+           SOURCES
+           ========================================================= */
+
+        .sources {
+            display: block !important;
+
+            height: auto !important;
+            min-height: 0 !important;
+
+            margin-top: 12px;
+
+            font-size: 11px;
+
+            color: var(--muted);
+        }
+
+        .source-item {
+            display: inline-block;
+
+            margin: 4px 5px 0 0;
+
+            padding: 4px 8px;
+
+            border: 1px solid rgba(0, 245, 255, 0.15);
+
+            border-radius: 8px;
+        }
+
+        /* =========================================================
+           LOGIN
+           ========================================================= */
+
+        .chat-login-message {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .chat-login-message h2 {
+            color: var(--cyan);
+            margin-bottom: 12px;
+        }
+
+        /* =========================================================
+           FORCE CHAT CONTENT TO NEVER STRETCH
+           ========================================================= */
+
+        .chat-card .chat-messages,
+        .chat-card .chat-message,
+        .chat-card .chat-bubble,
+        .chat-card .chat-label,
+        .chat-card .sources {
+            box-sizing: border-box;
+        }
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .ai-chat-page {
+                padding: 35px 14px;
+            }
+
+            .chat-toolbar {
+                padding: 15px 17px;
+            }
+
+            .faq-section {
+                padding: 17px 17px 5px;
+            }
+
+            .chat-card .chat-messages {
+                max-height: 280px;
+                padding: 15px;
+            }
+
+            .chat-card .chat-bubble {
+                max-width: 90% !important;
+            }
+
+            .chat-form {
+                flex-direction: column;
+            }
+
+            .chat-send {
+                padding: 13px;
+            }
+
+            .chat-input-area {
+                padding: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+    <div id="cursor-triangle"></div>
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="brand logo"
+        >
+            <span class="brand-symbol">◇</span>
+            <span>BLOG<span>NEST</span></span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="blogs.html">
+                Explore
+            </a>
+
+            <a
+                href="ai.html"
+                class="active"
+            >
+                AI Lab
+            </a>
+
+            <a href="create.html">
+                Create
+            </a>
+
+            <a href="ai-chat.html">
+                <span aria-hidden="true">🤖</span> AI Assistant
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button
+                id="themeToggle"
+                class="theme-toggle icon-button"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                ◐
+            </button>
+
+            <a
+                href="profile.html"
+                class="nav-login"
+            >
+                Profile
+            </a>
+
+        </div>
+
+    </header>
+
+    <main class="ai-chat-page">
+
+        <div class="ai-chat-container">
+
+            <section class="ai-chat-header">
+
+                <div class="ai-chat-eyebrow">
+                    BLOGNEST AI // KNOWLEDGE ASSISTANT
+                </div>
+
+                <h1>
+                    AI ASSISTANT
+                </h1>
+
+                <p>
+                    Ask questions about BlogNest and discover answers
+                    from published articles using AI-powered semantic retrieval.
+                </p>
+
+            </section>
+
+            <section class="chat-card">
+
+                <div class="chat-toolbar">
+
+                    <div class="chat-status">
+
+                        <span class="chat-status-dot"></span>
+
+                        BLOGNEST AI ONLINE
+
+                    </div>
+
+                    <span>
+                        RAG ASSISTANT
+                    </span>
+
+                </div>
+
+                <div class="faq-section">
+
+                    <div class="faq-title">
+                        QUICK QUESTIONS
+                    </div>
+
+                    <div class="faq-buttons">
+
+                        <button
+                            class="faq-button"
+                            data-question="What is BlogNest?"
+                        >
+                            What is BlogNest?
+                        </button>
+
+                        <button
+                            class="faq-button"
+                            data-question="What topics are available on BlogNest?"
+                        >
+                            Available topics
+                        </button>
+
+                        <button
+                            class="faq-button"
+                            data-question="What is semantic search?"
+                        >
+                            What is semantic search?
+                        </button>
+
+                        <button
+                            class="faq-button"
+                            data-question="What is vector search?"
+                        >
+                            What is vector search?
+                        </button>
+
+                        <button
+                            class="faq-button"
+                            data-question="What is AI-generated content?"
+                        >
+                            AI-generated content
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="chatMessages"
+                    class="chat-messages"
+                >
+
+                    <div class="chat-message ai">
+
+                        <div class="chat-bubble">
+                            <div class="chat-label">BLOGNEST AI</div>
+                            <div class="chat-text">Hello! I'm BlogNest AI. Ask me about BlogNest's published articles and I'll search the knowledge base to help you.</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="chat-input-area">
+
+                    <form
+                        id="chatForm"
+                        class="chat-form"
+                    >
+
+                        <input
+                            id="chatInput"
+                            class="chat-input"
+                            type="text"
+                            maxlength="2000"
+                            placeholder="Ask BlogNest AI..."
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button
+                            id="chatSend"
+                            class="chat-send"
+                            type="submit"
+                        >
+                            SEND →
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <span class="brand-symbol">
+                ◇
+            </span>
+
+            <span>
+                BLOG<span>NEST</span>
+            </span>
+
+        </div>
+
+        <p>
+            Ideas connected. Stories amplified.
+            Next-generation AI blogging.
+        </p>
+
+    </footer>
+
+    <script src="js/loader.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ai-chat.js"></script>
+
+</body>
+
+</html>

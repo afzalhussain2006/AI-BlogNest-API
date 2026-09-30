@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog | BlogNest</title>
+    <meta name="description" content="Update and refine your published blogs on BlogNest.">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon.png">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div id="cursor-triangle"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="brand logo">
+            <span class="brand-symbol">◇</span>
+            <span>BLOG<span>NEST</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Explore</a>
+            <a href="ai.html">AI Lab</a>
+            <a href="create.html">Create</a>
+            <a href="profile.html">Profile</a>
+            <a href="ai-chat.html">
+    <span aria-hidden="true">🤖</span> AI Assistant
+</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="theme-toggle icon-button" type="button" aria-label="Toggle theme">
+                ◐
+            </button>
+
+            <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <div id="mobileDrawer" class="mobile-drawer">
+        <a href="index.html">Home</a>
+        <a href="blogs.html">Explore</a>
+        <a href="ai.html">AI Lab</a>
+        <a href="create.html">Create</a>
+        <a href="profile.html">Profile</a>
+    </div>
+
+    <main class="edit-page">
+        <div class="edit-container">
+
+            <section class="edit-header">
+                <div class="edit-eyebrow">
+                    <span class="status-dot"></span>
+                    CONTENT MANAGEMENT // REVISION SYSTEM
+                </div>
+
+                <h1>EDIT BLOG</h1>
+
+                <p>
+                    Update your article, refine metadata tags, or switch visibility status. Changes synchronize
+                    across the network immediately.
+                </p>
+            </section>
+
+            <form id="editForm" class="edit-card" novalidate>
+
+                <div class="field form-group">
+                    <label for="title">// BLOG TITLE</label>
+                    <input
+                        id="title"
+                        type="text"
+                        maxlength="200"
+                        placeholder="Blog title"
+                        required
+                    >
+                </div>
+
+                <div class="field form-group">
+                    <label for="excerpt">// SUMMARY / EXCERPT</label>
+                    <input
+                        id="excerpt"
+                        type="text"
+                        maxlength="500"
+                        placeholder="Short summary for card feeds and search engines"
+                    >
+                </div>
+
+                <div class="two-columns form-row">
+                    <div class="field form-group">
+                        <label for="category">// CATEGORY</label>
+                        <input
+                            id="category"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Artificial Intelligence"
+                        >
+                    </div>
+
+                    <div class="field form-group">
+                        <label for="status">// PUBLISHING STATUS</label>
+                        <select id="status">
+                            <option value="draft">Draft (Private)</option>
+                            <option value="published">Published (Public)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field form-group">
+                    <label for="tags">// TAGS (COMMA SEPARATED)</label>
+                    <input
+                        id="tags"
+                        type="text"
+                        placeholder="ai, technology, programming"
+                    >
+                    <div class="form-help">Separate tags using commas (e.g. react, node, api)</div>
+                </div>
+
+                <div class="field form-group">
+                    <label for="content">// FULL ARTICLE CONTENT (MARKDOWN / TEXT)</label>
+                    <textarea
+                        id="content"
+                        placeholder="Write your blog content..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div id="editMessage" class="edit-message"></div>
+
+                <div class="edit-actions">
+                    <button
+                        id="cancelButton"
+                        type="button"
+                        class="edit-button secondary button-outline"
+                    >
+                        CANCEL
+                    </button>
+
+                    <button
+                        id="updateButton"
+                        type="submit"
+                        class="edit-button button-primary"
+                    >
+                        UPDATE BLOG →
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <span class="brand-symbol">◇</span>
+            <span>BLOG<span>NEST</span></span>
+        </div>
+        <p>Ideas connected. Stories amplified. Next-generation AI blogging.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Explore</a>
+            <a href="profile.html">Profile</a>
+        </div>
+        <div class="footer-bottom">
+            BLOGNEST // REVISION CONTROL // NODE ACTIVE
+        </div>
+    </footer>
+
+    <script src="js/loader.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/edit.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+mongodb+srv://blognest_admin:ICHIGODUZUMAKI@cluster0.s3ji9fj.mongodb.net/?appName=Cluster+
+
+MONGODB_URI=mongodb+srv://blognest_admin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/blognest?retryWrites=true&w=majority
+
+Username: blognest_admin
+Password: YOUR_PASSWORD
+blognest
+
+ICHIGODUZUMAKI
+
+mongodb+srv://<db_username>:<db_password>@cluster0.s3ji9fj.mongodb.net/?appName=Cluster0
+
+npm run dev
+
+ADMIN JWTToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYjkyMjZhOWRmODhkM2E3ZDJiZTYwZSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc5MDUxNzkxNCwiZXhwIjoxNzkxMTIyNzE0fQ.NmV0wHlatFvgeIxEHiVLyH-jALnZGJSkyJMJk8C3wCs
+
+6ab92302403ca72ecd896107
+
+gemini api key:
+AQ.Ab8RN6Ldl32Zc805tQl4E4dPqRv1gtr-YD1zh5hHBlEoq8STeA
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYjkzZjRlNzZmZjc1NTc0NDNkYTJkOCIsInJvbGUiOiJSZWFkZXIiLCJpYXQiOjE3OTA1MjUyNjIsImV4cCI6MTc5MTEzMDA2Mn0.FRvc6cJChE8mWabLjrvpOCZzitL-SWAXwN7b2dN4Kto
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYjkzZjRlNzZmZjc1NTc0NDNkYTJkOCIsInJvbGUiOiJSZWFkZXIiLCJpYXQiOjE3OTA1MjU1NTUsImV4cCI6MTc5MTEzMDM1NX0.6AJQDBUDzxWx-018RO5dYHLKZaO0YkfOcRmekqnsb0k
+
+
+tester1{
+  "email": reader@test.com
+  "password": Reader@123
+}
+
+admin
+{
+  "email": admin@blognest.com
+  "password": Admin@123456
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog | BlogNest</title>
+    <meta name="description" content="Author and publish new articles or generate full drafts using Gemini AI on BlogNest.">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon.png">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div id="cursor-triangle"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="brand logo">
+            <span class="brand-symbol">◇</span>
+            <span>BLOG<span>NEST</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Explore</a>
+            <a href="ai.html">AI Lab</a>
+            <a href="create.html" class="active">Create</a>
+            <a href="ai-chat.html">
+    <span aria-hidden="true">🤖</span> AI Assistant
+</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="theme-toggle icon-button" type="button" aria-label="Toggle theme">
+                ◐
+            </button>
+
+            <a href="login.html" class="nav-login">
+                Login
+            </a>
+
+            <a href="register.html" class="button button-small nav-join">
+                Join
+            </a>
+
+            <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <div id="mobileDrawer" class="mobile-drawer">
+        <a href="index.html">Home</a>
+        <a href="blogs.html">Explore</a>
+        <a href="ai.html">AI Lab</a>
+        <a href="create.html" class="active">Create</a>
+        <a href="login.html" class="nav-login">Login</a>
+        <a href="register.html" class="nav-join">Join</a>
+    </div>
+
+    <main class="create-page">
+        <div class="create-container">
+
+            <section class="create-header">
+                <div class="create-eyebrow">
+                    <span class="status-dot"></span>
+                    CONTENT CREATION STUDIO // GEMINI CO-PILOT
+                </div>
+
+                <h1>CREATE BLOG</h1>
+
+                <p>
+                    Compose technical articles, share discoveries, or collaborate with the Gemini AI engine
+                    to synthesize structured drafts and excerpts.
+                </p>
+            </section>
+
+            <section class="ai-panel">
+                <div class="ai-panel-header">
+                    <div>
+                        <h2>✦ AI CONTENT GENERATOR</h2>
+                        <p class="ai-description">
+                            Provide a prompt or topic concept to generate a draft with Gemini.
+                        </p>
+                    </div>
+
+                    <span class="ai-badge">
+                        GEMINI 3.5 FLASH
+                    </span>
+                </div>
+
+                <label for="aiPrompt" class="ai-label">
+                    // PROMPT INSTRUCTION
+                </label>
+
+                <textarea
+                    id="aiPrompt"
+                    name="topic"
+                    class="ai-prompt"
+                    placeholder="Example: Write a deep-dive technical article explaining WebSocket architecture versus HTTP/2 Server-Sent Events, with code samples."
+                ></textarea>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                    <button
+                        type="button"
+                        id="generateButton"
+                        class="ai-generate-button button-outline"
+                    >
+                        ✦ GENERATE WITH AI
+                    </button>
+
+                    <div id="aiMessage" class="ai-message" style="margin: 0;"></div>
+                </div>
+            </section>
+
+            <form id="createForm" class="create-form" novalidate>
+
+                <div class="form-group">
+                    <label for="title">// BLOG TITLE</label>
+                    <input
+                        type="text"
+                        id="title"
+                        maxlength="200"
+                        placeholder="Designing Scalable Systems with Distributed Caches"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="excerpt">// SUMMARY / EXCERPT</label>
+                    <textarea
+                        id="excerpt"
+                        maxlength="500"
+                        rows="3"
+                        placeholder="A concise synopsis of the article that will appear on card feeds and search results..."
+                    ></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">// CATEGORY</label>
+                        <input
+                            type="text"
+                            id="category"
+                            maxlength="100"
+                            placeholder="Architecture"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">// PUBLISHING STATUS</label>
+                        <select id="status">
+                            <option value="draft">Draft (Private)</option>
+                            <option value="published" selected>Published (Public Feed)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">// TAGS (COMMA SEPARATED)</label>
+                    <input
+                        type="text"
+                        id="tags"
+                        placeholder="backend, distributed-systems, redis, cache"
+                    >
+                    <div class="form-help">Separate individual tags with commas (e.g. cloud, kubernetes, go)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">// FULL ARTICLE CONTENT (MARKDOWN / TEXT)</label>
+                    <textarea
+                        id="content"
+                        placeholder="Write your article in markdown or plain text..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div id="formMessage" class="form-message"></div>
+
+                <div class="create-actions">
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        onclick="window.location.href='blogs.html'"
+                    >
+                        CANCEL
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                    >
+                        PUBLISH BLOG →
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <span class="brand-symbol">◇</span>
+            <span>BLOG<span>NEST</span></span>
+        </div>
+        <p>Ideas connected. Stories amplified. Next-generation AI blogging.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Explore</a>
+            <a href="ai.html">AI Lab</a>
+        </div>
+        <div class="footer-bottom">
+            BLOGNEST // CREATOR STUDIO // NODE ACTIVE
+        </div>
+    </footer>
+
+    <script src="js/loader.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/create.js"></script>
+
+</body>
+</html>

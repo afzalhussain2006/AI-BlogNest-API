@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Blogs | BlogNest</title>
+    <meta name="description" content="Explore knowledge, stories, and AI-generated insights across the BlogNest network.">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon.png">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div id="cursor-triangle"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="brand logo">
+            <span class="brand-symbol">◇</span>
+            <span>BLOG<span>NEST</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html" class="active">Explore</a>
+            <a href="ai.html">AI Lab</a>
+            <a href="create.html">Create</a>
+            <a href="ai-chat.html">
+    <span aria-hidden="true">🤖</span> AI Assistant
+</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="theme-toggle icon-button" type="button" aria-label="Toggle theme">
+                ◐
+            </button>
+
+            <a href="login.html" class="nav-login">
+                Login
+            </a>
+
+            <a href="register.html" class="button button-small nav-join">
+                Join
+            </a>
+
+            <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <div id="mobileDrawer" class="mobile-drawer">
+        <a href="index.html">Home</a>
+        <a href="blogs.html" class="active">Explore</a>
+        <a href="ai.html">AI Lab</a>
+        <a href="create.html">Create</a>
+        <a href="login.html" class="nav-login">Login</a>
+        <a href="register.html" class="nav-join">Join</a>
+    </div>
+
+    <main class="explore-page">
+
+        <section class="explore-header">
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                KNOWLEDGE NETWORK // ATLAS SEARCH
+            </div>
+
+            <h1>EXPLORE BLOGS</h1>
+
+            <p>
+                Discover ideas, tutorials, and technical insights across the decentralized BlogNest network.
+                Switch between exact keywords and neural semantic vector search.
+            </p>
+        </section>
+
+        <section class="explore-controls">
+            <div class="blog-search">
+
+                <div class="search-header">
+                    <span class="search-label">// SEARCH MODE</span>
+
+                    <div class="search-mode">
+                        <button
+                            id="keywordMode"
+                            class="search-mode-button active"
+                            type="button"
+                        >
+                            KEYWORD
+                        </button>
+
+                        <button
+                            id="semanticMode"
+                            class="search-mode-button"
+                            type="button"
+                        >
+                            ✦ SEMANTIC AI
+                        </button>
+                    </div>
+                </div>
+
+                <div class="search-row">
+                    <div class="search-box">
+                        <span class="search-icon">⌕</span>
+                        <input
+                            id="blogSearch"
+                            type="text"
+                            placeholder="Search BlogNest..."
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <button
+                        id="searchButton"
+                        class="search-button button-primary"
+                        type="button"
+                    >
+                        SEARCH
+                    </button>
+                </div>
+
+                <div id="searchModeInfo" class="search-mode-info">
+                    Keyword search looks for matching words and phrases in titles, content, and tags.
+                </div>
+
+            </div>
+        </section>
+
+        <div id="resultsInfo" class="results-info">
+            Connecting to BlogNest network...
+        </div>
+
+        <section id="blogsGrid" class="blogs-grid">
+            <div class="loading">
+                CONNECTING TO BLOGNEST NETWORK...
+            </div>
+        </section>
+
+        <div id="pagination" class="pagination"></div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <span class="brand-symbol">◇</span>
+            <span>BLOG<span>NEST</span></span>
+        </div>
+        <p>Ideas connected. Stories amplified. Next-generation AI blogging.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Explore</a>
+            <a href="ai.html">AI Lab</a>
+            <a href="create.html">Create</a>
+        </div>
+        <div class="footer-bottom">
+            BLOGNEST // EXPLORE INTERFACE // SYSTEM ACTIVE
+        </div>
+    </footer>
+
+    <script src="js/loader.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/blogs.js"></script>
+
+</body>
+</html>

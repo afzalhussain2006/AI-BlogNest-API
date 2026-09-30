@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>BlogNest — Future of Blogging</title>
+
+  <meta
+    name="description"
+    content="BlogNest — a futuristic AI-powered blogging platform."
+  />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon.png">
+</head>
+
+<body>
+
+  <div id="blognest-loader" class="blognest-loader" aria-label="Loading BlogNest">
+    <div class="loader-backdrop-grid"></div>
+    <div class="loader-ambient-glow"></div>
+    <div class="loader-container">
+      <div class="loader-media-wrapper">
+        <img
+          id="loaderImage"
+          class="loader-image"
+          src="assets/loader/loader.gif"
+          alt="BlogNest Loader"
+        />
+        <div id="loaderCyberRing" class="loader-cyber-ring">
+          <div class="loader-ring-spin"></div>
+          <div class="loader-ring-core">◇</div>
+        </div>
+      </div>
+      <div class="loader-brand">
+        <span class="loader-symbol">◇</span>
+        <span>BLOG<span>NEST</span></span>
+      </div>
+      <div class="loader-status">
+        <span class="loader-status-dot"></span>
+        <span class="loader-status-text">INITIALIZING KNOWLEDGE NETWORK...</span>
+      </div>
+      <div class="loader-progress-track">
+        <div class="loader-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="background-grid"></div>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <div id="cursor-triangle"></div>
+  <div id="cursor-layer"></div>
+
+  <header class="navbar">
+
+    <a href="index.html" class="brand">
+      <span class="brand-symbol">◇</span>
+      <span>BLOG<span>NEST</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="blogs.html">Explore</a>
+      <a href="ai.html">AI Lab</a>
+      <a href="create.html">Create</a>
+      <a href="ai-chat.html">
+    <span aria-hidden="true">🤖</span> AI Assistant
+</a>
+    </nav>
+
+    <div class="nav-actions">
+
+      <button
+        id="theme-toggle"
+        class="icon-button"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      >
+        ☾
+      </button>
+
+      <a href="login.html" class="nav-login">
+        Login
+      </a>
+
+      <a href="register.html" class="button button-small nav-join">
+        Join
+      </a>
+
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+  <div id="mobileDrawer" class="mobile-drawer">
+    <a href="index.html" class="active">Home</a>
+    <a href="blogs.html">Explore</a>
+    <a href="ai.html">AI Lab</a>
+    <a href="create.html">Create</a>
+    <a href="login.html" class="nav-login">Login</a>
+    <a href="register.html" class="nav-join">Join</a>
+  </div>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          BLOGNEST // AI-POWERED PUBLISHING
+        </div>
+
+        <h1>
+          ENTER THE
+          <span class="gradient-text">NEXT</span>
+          GENERATION
+          OF BLOGGING.
+        </h1>
+
+        <p class="hero-description">
+          Discover ideas, publish your thoughts, and use AI to
+          transform the way you create content.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="blogs.html" class="button button-primary">
+            Explore Blogs
+            <span>→</span>
+          </a>
+
+          <a href="ai.html" class="button button-outline">
+            <span>✦</span>
+            AI Lab
+          </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+          <div class="stat">
+            <strong>∞</strong>
+            <span>Ideas</span>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat">
+            <strong>AI</strong>
+            <span>Powered</span>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Explore</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="digital-world-system" aria-label="Futuristic holographic Earth with orbiting knowledge network">
+
+          <div class="digital-earth-wrapper">
+            <svg class="digital-earth-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <radialGradient id="earthInterior" cx="45%" cy="38%" r="62%">
+                  <stop offset="0%" stop-color="#0d1f2d" stop-opacity="0.9" />
+                  <stop offset="70%" stop-color="#04090f" stop-opacity="0.98" />
+                  <stop offset="100%" stop-color="#ffd700" stop-opacity="0.18" />
+                </radialGradient>
+                <radialGradient id="atmosphereCorona" cx="50%" cy="50%" r="50%">
+                  <stop offset="80%" stop-color="#ffd700" stop-opacity="0" />
+                  <stop offset="94%" stop-color="#ffd700" stop-opacity="0.25" />
+                  <stop offset="100%" stop-color="#ffd700" stop-opacity="0" />
+                </radialGradient>
+                <clipPath id="earthClip">
+                  <circle cx="250" cy="250" r="140" />
+                </clipPath>
+              </defs>
+
+              <circle cx="250" cy="250" r="144" fill="url(#atmosphereCorona)" />
+              <circle cx="250" cy="250" r="150" stroke="rgba(255, 215, 0, 0.22)" stroke-width="1" stroke-dasharray="3 7" class="tech-ring-outer" />
+              <circle cx="250" cy="250" r="158" stroke="rgba(0, 245, 255, 0.18)" stroke-width="0.8" stroke-dasharray="6 14" class="tech-ring-cyan" />
+
+              <g clip-path="url(#earthClip)">
+                <circle cx="250" cy="250" r="140" fill="url(#earthInterior)" />
+
+                <line x1="110" y1="250" x2="390" y2="250" stroke="rgba(255, 215, 0, 0.35)" stroke-width="1.2" stroke-dasharray="4 3" />
+                <ellipse cx="250" cy="210" rx="134" ry="24" stroke="rgba(255, 215, 0, 0.2)" stroke-width="0.9" fill="none" />
+                <ellipse cx="250" cy="290" rx="134" ry="24" stroke="rgba(255, 215, 0, 0.2)" stroke-width="0.9" fill="none" />
+                <ellipse cx="250" cy="170" rx="115" ry="18" stroke="rgba(255, 215, 0, 0.14)" stroke-width="0.8" fill="none" />
+                <ellipse cx="250" cy="330" rx="115" ry="18" stroke="rgba(255, 215, 0, 0.14)" stroke-width="0.8" fill="none" />
+                <ellipse cx="250" cy="135" rx="80" ry="12" stroke="rgba(255, 215, 0, 0.12)" stroke-width="0.8" fill="none" />
+                <ellipse cx="250" cy="365" rx="80" ry="12" stroke="rgba(255, 215, 0, 0.12)" stroke-width="0.8" fill="none" />
+
+                <g class="earth-continents-track">
+                  <g class="world-map-set set-1">
+                    <path d="M 55,148 L 70,140 L 95,138 L 115,145 L 120,152 L 132,145 L 148,158 L 142,185 L 148,212 L 135,218 L 120,235 L 128,250 L 118,245 L 105,215 L 95,195 L 80,175 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 152,125 L 175,122 L 168,145 L 155,140 Z" stroke="#ffd700" stroke-width="1.4" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 132,252 L 155,250 L 180,272 L 172,310 L 158,345 L 152,358 L 146,325 L 136,285 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 238,135 L 245,155 L 235,162 L 222,168 L 212,185 L 228,188 L 236,198 L 245,190 L 255,175 Z" stroke="#ffd700" stroke-width="1.5" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 215,152 L 222,146 L 224,158 L 216,158 Z" stroke="#ffd700" stroke-width="1.3" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 215,195 L 262,198 L 270,215 L 285,238 L 278,275 L 252,322 L 235,285 L 232,245 L 205,232 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 288,280 L 294,275 L 290,298 L 285,295 Z" stroke="#ffd700" stroke-width="1.3" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 255,175 L 280,145 L 340,142 L 390,148 L 395,168 L 360,195 L 360,205 L 345,230 L 332,255 L 320,225 L 305,255 L 290,215 L 278,222 L 272,240 L 262,225 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 375,195 L 385,185 L 388,210 Z" stroke="#ffd700" stroke-width="1.3" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 385,285 L 410,282 L 425,305 L 418,335 L 395,338 L 368,310 L 375,292 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 436,330 L 442,348 Z" stroke="#ffd700" stroke-width="1.4" />
+                    <circle cx="105" cy="195" r="2.5" fill="#00f5ff" />
+                    <circle cx="145" cy="190" r="2.5" fill="#00f5ff" />
+                    <circle cx="170" cy="280" r="2.5" fill="#ffd700" />
+                    <circle cx="225" cy="168" r="2.5" fill="#00f5ff" />
+                    <circle cx="255" cy="275" r="2.5" fill="#ffd700" />
+                    <circle cx="305" cy="235" r="2.5" fill="#00f5ff" />
+                    <circle cx="360" cy="195" r="2.5" fill="#00f5ff" />
+                    <circle cx="380" cy="200" r="2.5" fill="#ffd700" />
+                    <circle cx="410" cy="320" r="2.5" fill="#00f5ff" />
+                  </g>
+
+                  <g class="world-map-set set-2" transform="translate(500, 0)">
+                    <path d="M 55,148 L 70,140 L 95,138 L 115,145 L 120,152 L 132,145 L 148,158 L 142,185 L 148,212 L 135,218 L 120,235 L 128,250 L 118,245 L 105,215 L 95,195 L 80,175 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 152,125 L 175,122 L 168,145 L 155,140 Z" stroke="#ffd700" stroke-width="1.4" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 132,252 L 155,250 L 180,272 L 172,310 L 158,345 L 152,358 L 146,325 L 136,285 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 238,135 L 245,155 L 235,162 L 222,168 L 212,185 L 228,188 L 236,198 L 245,190 L 255,175 Z" stroke="#ffd700" stroke-width="1.5" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 215,152 L 222,146 L 224,158 L 216,158 Z" stroke="#ffd700" stroke-width="1.3" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 215,195 L 262,198 L 270,215 L 285,238 L 278,275 L 252,322 L 235,285 L 232,245 L 205,232 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 288,280 L 294,275 L 290,298 L 285,295 Z" stroke="#ffd700" stroke-width="1.3" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 255,175 L 280,145 L 340,142 L 390,148 L 395,168 L 360,195 L 360,205 L 345,230 L 332,255 L 320,225 L 305,255 L 290,215 L 278,222 L 272,240 L 262,225 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 375,195 L 385,185 L 388,210 Z" stroke="#ffd700" stroke-width="1.3" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 385,285 L 410,282 L 425,305 L 418,335 L 395,338 L 368,310 L 375,292 Z" stroke="#ffd700" stroke-width="1.6" fill="rgba(255, 215, 0, 0.06)" />
+                    <path d="M 436,330 L 442,348 Z" stroke="#ffd700" stroke-width="1.4" />
+                    <circle cx="105" cy="195" r="2.5" fill="#00f5ff" />
+                    <circle cx="145" cy="190" r="2.5" fill="#00f5ff" />
+                    <circle cx="170" cy="280" r="2.5" fill="#ffd700" />
+                    <circle cx="225" cy="168" r="2.5" fill="#00f5ff" />
+                    <circle cx="255" cy="275" r="2.5" fill="#ffd700" />
+                    <circle cx="305" cy="235" r="2.5" fill="#00f5ff" />
+                    <circle cx="360" cy="195" r="2.5" fill="#00f5ff" />
+                    <circle cx="380" cy="200" r="2.5" fill="#ffd700" />
+                    <circle cx="410" cy="320" r="2.5" fill="#00f5ff" />
+                  </g>
+                </g>
+
+                <line x1="250" y1="110" x2="250" y2="390" stroke="rgba(0, 245, 255, 0.35)" stroke-width="1.5" class="earth-scan-beam" />
+              </g>
+
+              <circle cx="250" cy="250" r="140" stroke="#ffd700" stroke-width="2" fill="none" filter="url(#goldGlow)" />
+              <circle cx="250" cy="250" r="140" stroke="#fff4a3" stroke-width="0.8" fill="none" />
+
+              <ellipse cx="250" cy="250" rx="215" ry="78" transform="rotate(-24 250 250)" stroke="rgba(0, 245, 255, 0.45)" stroke-width="1.4" stroke-dasharray="10 6" fill="none" class="cyan-orbit orbit-path-1" />
+              <ellipse cx="250" cy="250" rx="230" ry="86" transform="rotate(36 250 250)" stroke="rgba(0, 245, 255, 0.35)" stroke-width="1.2" stroke-dasharray="14 8" fill="none" class="cyan-orbit orbit-path-2" />
+              <ellipse cx="250" cy="250" rx="195" ry="92" transform="rotate(-58 250 250)" stroke="rgba(0, 245, 255, 0.25)" stroke-width="1" stroke-dasharray="6 6" fill="none" class="cyan-orbit orbit-path-3" />
+
+              <g class="orbiting-nodes-group">
+                <circle cx="85" cy="180" r="4.5" fill="#00f5ff" filter="url(#cyanGlow)" class="node-pulse node-a" />
+                <circle cx="415" cy="320" r="4" fill="#00f5ff" filter="url(#cyanGlow)" class="node-pulse node-b" />
+                <circle cx="390" cy="155" r="3.5" fill="#00f5ff" filter="url(#cyanGlow)" class="node-pulse node-c" />
+                <circle cx="110" cy="345" r="4" fill="#ffd700" filter="url(#goldGlow)" class="node-pulse node-d" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="info-capsule capsule-1" title="Global Knowledge Network">
+            <span class="capsule-kicker"><span class="kicker-dot"></span>// TRANSMISSION</span>
+            <span class="capsule-text">KNOWLEDGE CONNECTS THE WORLD</span>
+          </div>
+
+          <div class="info-capsule capsule-2" title="History of Blogging">
+            <span class="capsule-kicker"><span class="kicker-dot"></span>// ARCHIVE 1994</span>
+            <span class="capsule-text">FIRST BLOG PUBLISHED IN 1994</span>
+          </div>
+
+          <div class="info-capsule capsule-3" title="Core Philosophy">
+            <span class="capsule-kicker"><span class="kicker-dot"></span>// CORE SIGNAL</span>
+            <span class="capsule-text">INFORMATION IS EVERYTHING</span>
+          </div>
+
+          <div class="info-capsule capsule-4" title="Network Propagation">
+            <span class="capsule-kicker"><span class="kicker-dot"></span>// DATA FLOW</span>
+            <span class="capsule-text">IDEAS TRAVEL FURTHER WHEN SHARED</span>
+          </div>
+
+          <div class="info-capsule capsule-5" title="Creator Protocol">
+            <span class="capsule-kicker"><span class="kicker-dot"></span>// CREATOR NODE</span>
+            <span class="capsule-text">WRITE. SHARE. DISCOVER.</span>
+          </div>
+
+          <div class="info-capsule capsule-6" title="Storytelling">
+            <span class="capsule-kicker"><span class="kicker-dot"></span>// COGNITION</span>
+            <span class="capsule-text">EVERY IDEA HAS A STORY</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="search-section">
+
+      <div class="section-label">
+        <span>// DISCOVER</span>
+      </div>
+
+      <div class="search-box">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+          id="home-search"
+          type="text"
+          placeholder="Search ideas, topics, technology..."
+        />
+
+        <button id="search-button" class="search-button">
+          SEARCH
+        </button>
+
+      </div>
+
+    </section>
+
+    <section class="content-section">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-kicker">// FEATURED</span>
+
+          <h2>
+            SIGNALS FROM
+            <span>THE NEST</span>
+          </h2>
+        </div>
+
+        <a href="blogs.html" class="text-link">
+          View all →
+        </a>
+
+      </div>
+
+      <div id="featured-posts" class="blog-grid">
+
+        <article class="blog-card">
+
+          <div class="card-top">
+            <span class="category">ARTIFICIAL INTELLIGENCE</span>
+            <span class="card-index">01</span>
+          </div>
+
+          <div class="card-line"></div>
+
+          <h3>
+            Understanding Generative AI
+          </h3>
+
+          <p>
+            Explore how modern AI systems generate text,
+            code, images, and new possibilities.
+          </p>
+
+          <div class="card-bottom">
+            <span>AI · 5 MIN READ</span>
+            <span class="card-arrow">↗</span>
+          </div>
+
+        </article>
+
+        <article class="blog-card">
+
+          <div class="card-top">
+            <span class="category">DEVELOPMENT</span>
+            <span class="card-index">02</span>
+          </div>
+
+          <div class="card-line"></div>
+
+          <h3>
+            Building Modern APIs
+          </h3>
+
+          <p>
+            A practical look at designing scalable REST
+            APIs with Node.js and MongoDB.
+          </p>
+
+          <div class="card-bottom">
+            <span>DEV · 7 MIN READ</span>
+            <span class="card-arrow">↗</span>
+          </div>
+
+        </article>
+
+        <article class="blog-card">
+
+          <div class="card-top">
+            <span class="category">TECHNOLOGY</span>
+            <span class="card-index">03</span>
+          </div>
+
+          <div class="card-line"></div>
+
+          <h3>
+            The Future of Technology
+          </h3>
+
+          <p>
+            Discover the technologies shaping the next
+            generation of digital experiences.
+          </p>
+
+          <div class="card-bottom">
+            <span>TECH · 6 MIN READ</span>
+            <span class="card-arrow">↗</span>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="ai-banner">
+
+      <div class="ai-banner-grid"></div>
+
+      <div class="ai-content">
+
+        <span class="section-kicker">
+          // BLOGNEST AI
+        </span>
+
+        <h2>
+          YOUR IDEAS.
+          <br />
+          <span>AMPLIFIED.</span>
+        </h2>
+
+        <p>
+          Generate complete blog drafts, summarize content,
+          and turn concepts into publish-ready articles.
+        </p>
+
+        <a href="ai.html" class="button button-primary">
+          Enter AI Lab →
+        </a>
+
+      </div>
+
+      <div class="ai-symbol">
+        ✦
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+      <span class="brand-symbol">◇</span>
+      BLOGNEST
+    </div>
+
+    <p>
+      Ideas connected. Stories amplified.
+    </p>
+
+    <div class="footer-links">
+      <a href="blogs.html">Explore</a>
+      <a href="ai.html">AI Lab</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+
+    <div class="footer-bottom">
+      BLOGNEST // SYSTEM ONLINE
+    </div>
+
+  </footer>
+
+  <script src="js/loader.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
